@@ -1,0 +1,74 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader("UTF-8") { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty("flutter.versionCode")
+if (flutterVersionCode == null) {
+    flutterVersionCode = "1"
+}
+
+def flutterVersionName = localProperties.getProperty("flutter.versionName")
+if (flutterVersionName == null) {
+    flutterVersionName = "1.0"
+}
+
+android {
+    namespace = "com.example.frist_project"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.frist_project"
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutterVersionCode.toInteger()
+        versionName = flutterVersionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+dependencies {
+    // Firebase Bill of Materials (BOM) - Ensures compatibility between Firebase services
+    implementation platform('com.google.firebase:firebase-bom:31.0.2')
+
+    // Firebase authentication service
+    implementation 'com.google.firebase:firebase-auth'
+
+    // Firebase analytics service (optional)
+    implementation 'com.google.firebase:firebase-analytics' // Use this instead of `firebase-core`
+}
+
+android {                                                                                     
+   defaultConfig {                                                                             
+     minSdkVersion 23                                                                         
+   }                                                                                           
+}
+
+// Remove this line: `apply plugin: 'com.android.application'`
+
+// Add the Google Services plugin at the bottom:
+apply plugin: 'com.google.gms.google-services'

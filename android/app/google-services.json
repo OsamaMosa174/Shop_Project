@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "991899540399",
+    "firebase_url": "https://shop-app-8b4d1-default-rtdb.firebaseio.com",
+    "project_id": "shop-app-8b4d1",
+    "storage_bucket": "shop-app-8b4d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991899540399:android:6337a8048724cd0d78ad5a",
+        "android_client_info": {
+          "package_name": "com.example.frist_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPBpqybFXIP9rszPnmhZQozwee9rRDlNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

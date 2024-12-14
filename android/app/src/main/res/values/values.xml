@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Strings -->
+    <string name="app_name">com.example.frist_project</string>
+    
+    <!-- Firebase-related data -->
+    <string name="firebase_api_key">AIzaSyAPBpqybFXIP9rszPnmhZQozwee9rRDlNg</string>
+    <string name="firebase_database_url">https://shop-app-8b4d1-default-rtdb.firebaseio.com</string>
+    <string name="firebase_storage_url">gs://shop-app-8b4d1.appspot.com</string>
+    <string name="firebase_messaging_sender_id">991899540399</string> <!-- YOUR_SENDER_ID -->
+    <string name="firebase_app_id">1:991899540399:android:6337a8048724cd0d78ad5a</string> <!-- YOUR_APP_ID -->
+    <string name="firebase_project_id">shop-app-8b4d1</string>
+
+    <!-- Colors -->
+    <color name="primary_color">#FF6200EE</color>
+    
+    <!-- Integers -->
+    <integer name="max_retry_count">3</integer>
+</resources>

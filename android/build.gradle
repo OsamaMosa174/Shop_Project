@@ -1,0 +1,57 @@
+/*
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+buildscript {
+  dependencies {
+    // Add this line
+    classpath 'com.google.gms:google-services: 4.4.2'
+  }
+}
+
+*/
+buildscript {
+    repositories {
+        google() // Ensure this is included
+        mavenCentral() // Ensure this is included
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.4' // Use an appropriate version
+        classpath 'com.google.gms:google-services:4.4.2' // Make sure there's no space after the colon
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.20"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
